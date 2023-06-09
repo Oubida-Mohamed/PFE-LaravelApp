@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class SubCategorie extends Model
 {
     use HasFactory;
+    protected $fillable = [];
+    public function header(){
+        return $this->belongsTo(Header::class,'id');
+    }
 }
