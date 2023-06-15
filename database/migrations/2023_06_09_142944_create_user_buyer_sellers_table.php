@@ -22,9 +22,6 @@ return new class extends Migration
             $table->string("city", 45);
             $table->enum("role", ['buyer', 'seller']);
             $table->enum("languges", ["arabic", "french", "english"])->nullable();
-            $table->string("education", 1000)->nullable();
-            $table->string("competences", 1000)->nullable();
-            $table->string("certificats", 500)->nullable();
             $table->longText("photo_profil")->nullable();
             $table->timestamps();
         });
