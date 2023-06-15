@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer("orders");
             $table->enum("state", ['active', 'paused', 'draft']);
             $table->foreignId('sub_categories_id')->constrained();
-            $table->foreignId('user_buyer_sellers_id')->constrained('user_buyer_sellers');
+            $table->foreignId('user_id')->constrained('user_buyer_sellers');
             $table->timestamps();
         });
     }

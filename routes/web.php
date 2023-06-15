@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\TesterMailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', [CategorieController::class,"index"]);
+
+// Route::get('/send', [TesterMailController::class, "TesterMail"]);
+

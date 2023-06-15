@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer("année");
             $table->string("école",100);
             $table->string("paye_école",50);
+            $table->foreignId('user_id')->constrained('user_buyer_sellers');
         });
     }
 

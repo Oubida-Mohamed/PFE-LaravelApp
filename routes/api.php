@@ -14,6 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::get('/test', [App\Http\Controllers\CategorieController::class,"index"]);
+
+
+Route::post('/register', [App\Http\Controllers\UserBuyerSellerController::class,"register"]);
+Route::get('/login', [App\Http\Controllers\UserBuyerSellerController::class,"index"]);
+Route::post('/login', [App\Http\Controllers\UserBuyerSellerController::class,"login"]);
+Route::post('/loginGoogle', [App\Http\Controllers\UserBuyerSellerController::class,"loginGoogle"]);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/user', [App\Http\Controllers\UserBuyerSellerController::class,"index"]);
+    Route::post('/logout', [App\Http\Controllers\UserBuyerSellerController::class,"logout"]);
 });
+
+

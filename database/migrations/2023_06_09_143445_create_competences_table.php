@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("label",100);
             $table->enum("Level",["Beginner","Intermediate","Expert"]);
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained('user_buyer_sellers');
         });
     }
 

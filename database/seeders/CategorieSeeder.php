@@ -18,7 +18,7 @@ class CategorieSeeder extends Seeder
                 'label'=>"Graphics & Design"
             ],
             [
-                'label'=>"Graphics & Design"
+                'label'=>"Digital Marketing"
             ],
             [
                 'label'=>"Writing & Translation"

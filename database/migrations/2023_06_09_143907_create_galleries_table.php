@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
             $table->enum("type", ['image', 'video', 'document']);
-            $table->longText("file_source");
+            $table->binary("file_source");
             $table->foreignId('services_id')->constrained();
             $table->timestamps();
         });
