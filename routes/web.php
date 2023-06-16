@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TesterMailController;
+use App\Http\Controllers\ServiceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 // Route::get('/send', [TesterMailController::class, "TesterMail"]);
 
+Route::get('/services', [ServiceController::class, "index"]);

@@ -18,11 +18,11 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('/test', [App\Http\Controllers\CategorieController::class,"index"]);
+Route::get('/Categories', [App\Http\Controllers\CategorieController::class,"index"]);
 
 
 Route::post('/register', [App\Http\Controllers\UserBuyerSellerController::class,"register"]);
-Route::get('/login', [App\Http\Controllers\UserBuyerSellerController::class,"index"]);
+Route::get('/user', [App\Http\Controllers\UserBuyerSellerController::class,"getUser"]);
 Route::post('/login', [App\Http\Controllers\UserBuyerSellerController::class,"login"]);
 Route::post('/loginGoogle', [App\Http\Controllers\UserBuyerSellerController::class,"loginGoogle"]);
 

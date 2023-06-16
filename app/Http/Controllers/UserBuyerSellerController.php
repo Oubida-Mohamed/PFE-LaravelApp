@@ -11,10 +11,15 @@ use App\Models\User;
 
 class UserBuyerSellerController extends Controller
 {
-    // public function index(){
-    //     $user = Auth::user();
-    //     return $user;
-    // }
+    public function getUser(){
+        if(Auth::check()){
+            $user = Auth::user();
+            return response()->json(["message"=>"Data Success","data"=>$user, "status"=>201]);
+        }else{
+            return response()->json(["message"=>"Data not found", "status"=>404]);
+        }
+        
+    }
 
     public function register(Request $request){
         $validator = Validator::make($request->all(),[
@@ -58,10 +63,12 @@ class UserBuyerSellerController extends Controller
 
     
 
-    public function logout(){
-        $cookie = Cookie::forget('jwt');
-        return response()->json(["message"=>"Logout with Success"], 201)->withCookie($cookie);
-    }
+    // public function logout(){
+    //     $cookie = Cookie::forget('jwt');
+    //     return response()->json(["message"=>"Logout with Success"], 201)->withCookie($cookie);
+    // }
+
+
 }
 
 

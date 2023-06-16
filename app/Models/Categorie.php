@@ -9,6 +9,7 @@ class Categorie extends Model
 {
     use HasFactory;
     protected $fillable = [];
+    
     public function headers(){
         return $this->hasMany(Header::class,'categories_id');
     }
