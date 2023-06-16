@@ -41,9 +41,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
-    public function services(){
-        return $this->hasMany(Service::class,"user_id");
-    }
 
     /**
      * The attributes that should be cast.
