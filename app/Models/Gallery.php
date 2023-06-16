@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Gallery extends Model
 {
     use HasFactory;
+    public function services(){
+        return $this->hasMany(service::class,"id");
+    }
 }

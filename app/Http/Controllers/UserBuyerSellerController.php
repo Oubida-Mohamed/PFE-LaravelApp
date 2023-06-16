@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +12,7 @@ use App\Models\User;
 
 class UserBuyerSellerController extends Controller
 {
+<<<<<<< HEAD
     public function getUser(){
         if(Auth::check()){
             $user = Auth::user();
@@ -19,6 +21,17 @@ class UserBuyerSellerController extends Controller
             return response()->json(["message"=>"Data not found", "status"=>404]);
         }
         
+=======
+    // public function index(){
+    //     $user = Auth::user();
+    //     return $user;
+    // }
+    public function index(){
+        // $services = User::with('services')->get();
+        $services=User::find(2)->get();
+
+        return response()->json($services);
+>>>>>>> d7c87f47f7e63b702576d29d88ab8745134cf235
     }
 
     public function register(Request $request){
@@ -63,11 +76,18 @@ class UserBuyerSellerController extends Controller
 
     
 
+<<<<<<< HEAD
     // public function logout(){
     //     $cookie = Cookie::forget('jwt');
     //     return response()->json(["message"=>"Logout with Success"], 201)->withCookie($cookie);
     // }
 
+=======
+    public function logout(){
+        $cookie = Cookie::forget('jwt');
+        return response()->json(["message"=>"Logout with Success"], 201)->withCookie($cookie);
+    }
+>>>>>>> d7c87f47f7e63b702576d29d88ab8745134cf235
 
 }
 

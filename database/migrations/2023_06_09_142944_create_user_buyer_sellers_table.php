@@ -23,7 +23,10 @@ return new class extends Migration
             $table->enum("sexe", ['M', 'F'])->nullable();
             $table->string("city", 45)->nullable();
             $table->enum("languges", ["arabic", "french", "english"])->nullable();
-            $table->binary("photo_profil")->nullable();
+            $table->string("education", 1000)->nullable();
+            $table->string("competences", 1000)->nullable();
+            $table->string("certificats", 500)->nullable();
+            $table->longText("photo_profil")->nullable();
             $table->timestamps();
         });
     }

@@ -17,7 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-// Route::get('/send', [TesterMailController::class, "TesterMail"]);
+Route::get('/test', [CategorieController::class,"index"]);
 
 Route::get('/services', [ServiceController::class, "index"]);

@@ -3,10 +3,11 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Service;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 
 
@@ -29,6 +30,7 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+   
     protected $table = 'user_buyer_sellers';
 
     /**
@@ -39,6 +41,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
+    public function services(){
+        return $this->hasMany(Service::class,"user_id");
+    }
 
     /**
      * The attributes that should be cast.

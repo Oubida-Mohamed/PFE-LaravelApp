@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\UserBuyerSellerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +33,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [App\Http\Controllers\UserBuyerSellerController::class,"index"]);
     Route::post('/logout', [App\Http\Controllers\UserBuyerSellerController::class,"logout"]);
 });
+Route::get('/Categories', [CategorieController::class,"index"]);
+Route::get('/services', [UserBuyerSellerController::class,"index"]);
+// Route::get('/services', [ServiceController::class,"index"]);
+
 
 
