@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sub_categories', function (Blueprint $table) {
             $table->id();
             $table->string('label',200);
-            $table->longText("image_subcategorie")->nullable();
+            $table->binary("image_subcategorie")->nullable();
             $table->foreignId('headers_id')->constrained();
         });
     }

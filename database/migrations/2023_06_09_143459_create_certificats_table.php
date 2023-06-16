@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("label",100);
             $table->string("certifié_par",100);
             $table->integer("année");
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained('user_buyer_sellers');
         });
     }
 

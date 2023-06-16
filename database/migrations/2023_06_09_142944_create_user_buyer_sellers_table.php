@@ -14,14 +14,18 @@ return new class extends Migration
         Schema::create('user_buyer_sellers', function (Blueprint $table) {
             $table->id();
             $table->string("name", 60);
-            $table->string("email", 45);
+            $table->string("email", 45)->unique();
             $table->string("password", 150);
+            $table->boolean('is_seller')->default(false);
+            $table->enum("role", ['buyer', 'seller'])->default('buyer');
             $table->text("description")->nullable();
-            $table->enum("status", ['online', 'offline']);
-            $table->enum("sexe", ['M', 'F']);
-            $table->string("city", 45);
-            $table->enum("role", ['buyer', 'seller']);
+            $table->enum("status", ['online', 'offline'])->nullable();
+            $table->enum("sexe", ['M', 'F'])->nullable();
+            $table->string("city", 45)->nullable();
             $table->enum("languges", ["arabic", "french", "english"])->nullable();
+            $table->string("education", 1000)->nullable();
+            $table->string("competences", 1000)->nullable();
+            $table->string("certificats", 500)->nullable();
             $table->longText("photo_profil")->nullable();
             $table->timestamps();
         });
