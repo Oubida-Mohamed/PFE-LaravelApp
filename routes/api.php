@@ -35,7 +35,7 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 Route::get('/Categories', [CategorieController::class,"index"]);
 Route::get('/services', [UserBuyerSellerController::class,"index"]);
-// Route::get('/services', [ServiceController::class,"index"]);
+Route::get('/services', [ServiceController::class,"index"]);
 
 
 

@@ -15,7 +15,7 @@ class Service extends Model
     public function user(){
         return $this->belongsTo(User::class,'id');
     }
-    // public function gallery(){
-    //     return $this->beLongsTo(Gallery::class,"services_id");
-    // }
+    public function galleries(){
+        return $this->hasMany(Gallery::class,"services_id");
+    }
 }

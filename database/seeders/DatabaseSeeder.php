@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Service;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,5 +25,8 @@ class DatabaseSeeder extends Seeder
             SubCategorieSeeder::class,
             UserBuyerSellerSeeder::class,
         ]);
+        
+
+    $user = factory(Service::class)->create(10);
     }
 }
